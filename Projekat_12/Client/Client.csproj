@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{25a70bde-5e49-421e-ac4d-e9ca8036e5d1}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DC\DC.csproj">
+      <Project>{16688791-3dac-4c29-b18c-d47ffcb8cf6f}</Project>
+      <Name>DC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

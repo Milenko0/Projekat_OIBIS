@@ -1,0 +1,11 @@
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.exe.config
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.exe
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.pdb
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Common.dll
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Common.pdb
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.exe
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.pdb

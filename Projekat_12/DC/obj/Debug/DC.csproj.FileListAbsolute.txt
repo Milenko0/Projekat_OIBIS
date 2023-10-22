@@ -1,0 +1,8 @@
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe.config
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.pdb
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.AssemblyReference.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.SuggestedBindingRedirects.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.exe
+C:\Users\Milenko\source\repos\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.pdb
