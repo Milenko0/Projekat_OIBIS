@@ -44,7 +44,8 @@
   <ItemGroup>
     <Compile Include="ICConnection.cs" />
     <Compile Include="IDataManagment.cs" />
-    <Compile Include="ITicketGrantingService.cs" />
+    <Compile Include="IKeySender.cs" />
+    <Compile Include="ISConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

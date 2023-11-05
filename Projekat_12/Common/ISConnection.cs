@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 namespace Common
 {
     [ServiceContract]
-    public interface ITicketGrantingService
+    public interface ISConnection
     {
         [OperationContract]
-        string GeneratePrivateString();
+        bool RegisterService(string IPAddr, string hostName, string port, string hashPassword, string username);
+        [OperationContract]
+        void SignOutService(string hostName);
     }
 }

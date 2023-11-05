@@ -14,7 +14,7 @@ namespace DC
         {
             //Authentification Service setup
             NetTcpBinding bindingAS = new NetTcpBinding();
-            string addressAS = "net.tcp://localhost:9999/AuthentificationService";
+            string addressAS = "net.tcp://localhost:6000/AuthentificationService";
             bindingAS.Security.Mode = SecurityMode.Transport;
             bindingAS.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             bindingAS.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
@@ -30,7 +30,7 @@ namespace DC
             bindingTGS.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
             ServiceHost hostTGS = new ServiceHost(typeof(TicketGrantingService));
-            hostTGS.AddServiceEndpoint(typeof(ITicketGrantingService), bindingTGS, addressTGS);
+            //hostTGS.AddServiceEndpoint(typeof(I), bindingTGS, addressTGS);
 
 
             //Prihvata klijenta prvo

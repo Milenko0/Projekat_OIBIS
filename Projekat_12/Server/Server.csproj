@@ -47,6 +47,8 @@
     <Compile Include="DataManagmentServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceKeyReciever.cs" />
+    <Compile Include="ServiceRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

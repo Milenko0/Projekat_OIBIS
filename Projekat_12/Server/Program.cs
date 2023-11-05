@@ -1,22 +1,64 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Principal;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Server
 {
-    internal class Program
+    public class Program
     {
+        public static string secretKey;
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(DataManagmentServer)))
+
+            WindowsIdentity id = WindowsIdentity.GetCurrent();
+            NetTcpBinding binding = new NetTcpBinding();
+            secretKey = null;
+
+            string serviceIP = "net.tcp://localhost";
+            string clientPort = "6000";
+            string clientService = "DataManagmentServer";
+            string connectionPort = "6001";
+            string keyReciverService = "ServiceKeyReciver";
+
+            string serviceEndpoint = serviceIP + ":" + clientPort + "/" + clientService;
+            string keyRecieverEndpoint = serviceIP + ":" + connectionPort + "/" + keyReciverService;
+
+            ServiceHost clientHost = new ServiceHost(typeof(DataManagmentServer));
+            clientHost.AddServiceEndpoint(typeof(IDataManagment), binding, serviceEndpoint);
+
+
+
+            clientHost.Open();
+            Console.WriteLine("Servis je pokrenut.");
+
+            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:8888/TicketGrantingService"))))
             {
-                host.Open();
-                Console.WriteLine("Servis je uspesno pokrenut");
-                Console.ReadKey();
+                proxy.Register(serviceIP + clientPort, clientService, clientPort, "password", id.Name);
             }
+
+            ServiceHost connectionHost = new ServiceHost(typeof(ServiceKeyReciever));
+            connectionHost.AddServiceEndpoint(typeof(IKeySender), binding, keyRecieverEndpoint);
+            connectionHost.Open();
+            Console.WriteLine("Servis za primanje kljuca je pokrenut.");
+
+            while (secretKey == null) System.Threading.Thread.Sleep(50);
+
+            Console.WriteLine("Izadji sa ENTER");
+            Console.ReadKey();
+
+            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:8888/TicketGrantingService"))))
+            {
+                proxy.SingOut(clientService);
+            }
+
+            clientHost.Close();
+            connectionHost.Close();
         }
     }
 }

@@ -8,13 +8,19 @@ using System.Threading.Tasks;
 
 namespace DC
 {
-    public class TicketGrantingService : ITicketGrantingService
+    public class TicketGrantingService : ChannelFactory<IKeySender>, IDisposable
     {
-        public string GeneratePrivateString()
+        IKeySender factory;
+
+        public TicketGrantingService(NetTcpBinding binding, EndpointAddress address) : base(binding, address)
         {
-            string key = "Tajni kljuc";
-            Console.WriteLine("Klijentu Poslat tajni kljuc");
-            return key;
+            factory = CreateChannel();
         }
+
+        public void SendKey(string key)
+        {
+            factory.SendKey(key);
+        }
+      
     }
 }
