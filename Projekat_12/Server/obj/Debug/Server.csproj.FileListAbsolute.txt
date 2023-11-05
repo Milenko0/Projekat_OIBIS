@@ -20,3 +20,14 @@ C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj
 C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.exe
 C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.pdb
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.exe.config
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.exe
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Server.pdb
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Common.dll
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Common.pdb
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.exe
+C:\Users\nikol\Desktop\OIBIS\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.pdb

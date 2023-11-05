@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAuthentificationService.cs" />
+    <Compile Include="ICConnection.cs" />
     <Compile Include="IDataManagment.cs" />
     <Compile Include="ITicketGrantingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

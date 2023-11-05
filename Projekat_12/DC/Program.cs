@@ -20,7 +20,7 @@ namespace DC
             bindingAS.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
             ServiceHost hostAS = new ServiceHost(typeof(AuthentificationService));
-            hostAS.AddServiceEndpoint(typeof(IAuthentificationService), bindingAS, addressAS);
+            hostAS.AddServiceEndpoint(typeof(ICConnection), bindingAS, addressAS);
 
             //Ticket Granting Service setup
             NetTcpBinding bindingTGS = new NetTcpBinding();
