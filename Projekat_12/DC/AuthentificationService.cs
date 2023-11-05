@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace DC
 {
-    public class AuthentificationService : IAuthentificationService
+    public class AuthentificationService : ICConnection
     {
-        public bool AuthentificateClient()
-        {
-            Console.WriteLine("Klijent se uspesno povezao na servis autentifikacije");
+        
 
-            return true;
+        public bool AuthentificateClient(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tuple<string, string> ServiceRequest(string service, string username)
+        {
+            throw new NotImplementedException();
         }
     }
 }

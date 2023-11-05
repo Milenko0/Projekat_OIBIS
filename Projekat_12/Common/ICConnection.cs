@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 namespace Common
 {
     [ServiceContract]
-    public interface IAuthentificationService
+    public interface ICConnection
     {
         [OperationContract]
-        bool AuthentificateClient();
+        bool AuthentificateClient(string username, string password);
+        [OperationContract]
+        Tuple<string, string> ServiceRequest(string service, string username);
     }
 }
