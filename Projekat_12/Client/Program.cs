@@ -40,6 +40,7 @@ namespace Client
                         Console.ReadLine();
                         return;
                     }
+                    secretKey = serviceEndpointAndKey.Item2;
                     Console.WriteLine("Trazeni servis je aktivan!\nKlijent dobio tajni kljuc: " + secretKey);
 
                     using (WCFClient proxy = new WCFClient(binding, new EndpointAddress(new Uri(serviceEndpointAndKey.Item1))))
@@ -51,41 +52,27 @@ namespace Client
                         {
                             message = "";
                             Console.WriteLine();
-                            Console.WriteLine("------Izaberi------");
-                            Console.WriteLine("1 -> Slanje poruke (Write)");
-                            Console.WriteLine("2 -> Prijem poruke (Read)");
-                            Console.WriteLine("3 -> Zatvaranje komunikacije");
+                            Console.WriteLine("------OPCIJE------");
+                            Console.WriteLine("1) Write");
+                            Console.WriteLine("2) Read");
+                            Console.WriteLine("3) Zatvaranje komunikacije");
                             Console.WriteLine("Unesite:");
                             izbor = Console.ReadKey().KeyChar;
                             Console.WriteLine();
                             switch (izbor)
                             {
                                 case '1':
-                                    Console.WriteLine("Unesite poruku za slanje:");
-                                    message = Console.ReadLine();
                                     Console.WriteLine();
-                                    if (!message.Trim().Equals(""))
+                                    //secretKey = "1111111";
+                                    Tuple<bool, string> answerW = proxy.Write(secretKey);
+                                    if (answerW.Item1)
                                     {
-                                        //if (proxy.Write(message, secretKey))
-                                        {
-                                            Console.WriteLine($"Poruka '{message}' je uspesno poslata. ");
-                                        }
+                         
+                                        Console.WriteLine("Odgovor servera: "+ answerW.Item2);
                                     }
-                                    else
-                                        Console.WriteLine("Poruka za slanje nije uneta");
                                     break;
                                 case '2':
                                     Console.WriteLine();
-                                    //string primljenaPoruka = proxy.Read(secretKey);
-                                    string primljenaPoruka = "";
-                                    if (primljenaPoruka.Trim().Equals(""))
-                                    {
-                                        Console.WriteLine("Nema podataka na serveru");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Server Poslao: " + primljenaPoruka);
-                                    }
                                     break;
                                 case '3':
                                     close = true;

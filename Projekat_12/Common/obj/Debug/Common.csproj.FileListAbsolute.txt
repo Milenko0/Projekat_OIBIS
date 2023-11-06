@@ -22,3 +22,9 @@ C:\Users\Milenko\Desktop\Projekat12\Projekat_OIBIS\Projekat_12\Common\obj\Debug\
 C:\Users\Milenko\Desktop\Projekat12\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Milenko\Desktop\Projekat12\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.dll
 C:\Users\Milenko\Desktop\Projekat12\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.pdb
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\bin\Debug\Common.dll
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\bin\Debug\Common.pdb
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.dll
+C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.pdb

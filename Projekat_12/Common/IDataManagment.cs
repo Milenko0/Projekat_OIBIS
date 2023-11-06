@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Common
 {
@@ -13,6 +14,6 @@ namespace Common
         [OperationContract]
         void Read();
         [OperationContract]
-        void Write();
+        string Write(string modifiedKey);
     }
 }

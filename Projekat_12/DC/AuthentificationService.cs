@@ -20,11 +20,12 @@ namespace DC
 
             RegisteredUsers = new Dictionary<string, string>();
             RegisteredUsers.Add("DESKTOP-VU574HQ\\Milenko", password);
-            
+            RegisteredUsers.Add("BUBALO-LAPTOP\\Bubalo", password);
 
             UsersAccountForServer = new Dictionary<string, string>();
             UsersAccountForServer.Add("DESKTOP-VU574HQ\\Milenko", password);
-           
+            UsersAccountForServer.Add("BUBALO-LAPTOP\\Bubalo", password);
+
         }
 
         public bool AuthentificateClient(string username, string password)
