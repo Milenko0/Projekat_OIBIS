@@ -24,7 +24,7 @@ namespace Client
             string username = id.Name; 
             Console.WriteLine($"User: {username}");
 
-            string address = "net.tcp://localhost:6000/AuthentificationService";
+            string address = "net.tcp://localhost:6004/AuthentificationService";
           
             string service = "DataManagmentServer";
             Tuple<string, string> serviceEndpointAndKey = null;

@@ -12,39 +12,29 @@ namespace DC
     {
         static void Main(string[] args)
         {
-            //Authentification Service setup
-            NetTcpBinding bindingAS = new NetTcpBinding();
-            string addressAS = "net.tcp://localhost:6000/AuthentificationService";
-            bindingAS.Security.Mode = SecurityMode.Transport;
-            bindingAS.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
-            bindingAS.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+            string address = "net.tcp://localhost:6004/AuthentificationService";
+            NetTcpBinding binding = new NetTcpBinding();
 
-            ServiceHost hostAS = new ServiceHost(typeof(AuthentificationService));
-            hostAS.AddServiceEndpoint(typeof(ICConnection), bindingAS, addressAS);
+            ServiceHost host = new ServiceHost(typeof(DomainController));
+            host.AddServiceEndpoint(typeof(ICConnection), binding, address);
 
-            //Ticket Granting Service setup
-            NetTcpBinding bindingTGS = new NetTcpBinding();
-            string addressTGS = "net.tcp://localhost:8888/TicketGrantingService";
-            bindingTGS.Security.Mode = SecurityMode.Transport;
-            bindingTGS.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
-            bindingTGS.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
-
-            ServiceHost hostTGS = new ServiceHost(typeof(TicketGrantingService));
-            //hostTGS.AddServiceEndpoint(typeof(I), bindingTGS, addressTGS);
+            host.Open();
+            Console.WriteLine("Domain controller host is opened.");
 
 
-            //Prihvata klijenta prvo
-            hostAS.Open();
-
-           
-
+            string addressForServer = "net.tcp://localhost:6001/ServiceRegistration";
+            NetTcpBinding bindingForServer = new NetTcpBinding();
             
-            //Salje klijentu tajni kljuc
-            hostTGS.Open();
+            ServiceHost hostForServer = new ServiceHost(typeof(DomainController));
+            hostForServer.AddServiceEndpoint(typeof(ISConnection), bindingForServer, addressForServer);
             
-            //Ovdje treba da posalje servisu tajni kljuc isto
+            hostForServer.Open();
+            
 
-            Console.ReadKey();
+            Console.WriteLine("ServiceConnection host is opened.");
+            Console.ReadLine();
+
+            host.Close();
         }
     }
 }

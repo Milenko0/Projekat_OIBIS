@@ -23,7 +23,7 @@ namespace Server
             string serviceIP = "net.tcp://localhost";
             string clientPort = "6000";
             string clientService = "DataManagmentServer";
-            string connectionPort = "6001";
+            string connectionPort = "6007";
             string keyReciverService = "ServiceKeyReciver";
 
             string serviceEndpoint = serviceIP + ":" + clientPort + "/" + clientService;
@@ -37,7 +37,7 @@ namespace Server
             clientHost.Open();
             Console.WriteLine("Servis je pokrenut.");
 
-            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:8888/TicketGrantingService"))))
+            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:6001/ServiceRegistration"))))
             {
                 proxy.Register(serviceIP + clientPort, clientService, clientPort, "password", id.Name);
             }
@@ -48,11 +48,12 @@ namespace Server
             Console.WriteLine("Servis za primanje kljuca je pokrenut.");
 
             while (secretKey == null) System.Threading.Thread.Sleep(50);
+            Console.WriteLine("Privatni kljuc" + secretKey);
 
             Console.WriteLine("Izadji sa ENTER");
             Console.ReadKey();
 
-            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:8888/TicketGrantingService"))))
+            using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:6001/ServiceRegistration"))))
             {
                 proxy.SingOut(clientService);
             }

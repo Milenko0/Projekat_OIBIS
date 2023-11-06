@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthentificationService.cs" />
+    <Compile Include="DomainController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel.cs" />
     <Compile Include="TicketGrantingService.cs" />
   </ItemGroup>
   <ItemGroup>

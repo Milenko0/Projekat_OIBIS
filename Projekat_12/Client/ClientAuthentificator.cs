@@ -26,7 +26,7 @@ namespace Client
             bool ret = false;
             try
             {
-                ret = factory.AuthentificateClient(username, password);
+                ret = factory.ValidateUser(username, password);
             }
             catch (Exception e)
             {

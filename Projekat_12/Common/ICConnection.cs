@@ -11,7 +11,7 @@ namespace Common
     public interface ICConnection
     {
         [OperationContract]
-        bool AuthentificateClient(string username, string password);
+        bool ValidateUser(string username, string password);
         [OperationContract]
         Tuple<string, string> ServiceRequest(string service, string username);
     }
