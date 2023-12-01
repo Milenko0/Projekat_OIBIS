@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,8 +63,9 @@ namespace DC
 
         private string GenerateKey()
         {
-            Random random = new Random();
-            return random.Next(1000).ToString();
+            SymmetricAlgorithm sa = TripleDESCryptoServiceProvider.Create();
+
+            return ASCIIEncoding.ASCII.GetString(sa.Key);
         }
 
         public void SignOutService(string hostName)
