@@ -50,7 +50,10 @@ namespace Server
             while (secretKey == null) System.Threading.Thread.Sleep(50);
             Console.WriteLine("Privatni kljuc" + secretKey);
 
-            Console.WriteLine(Encrypting.EncryptMessage("HI IAM A KEY", secretKey));
+            var enMessage = Encrypting.EncryptMessage("HELLO WORLD", secretKey);
+            var deMEssage = Encrypting.DecryptMessage(enMessage, secretKey);
+
+            Console.WriteLine(deMEssage + " " + enMessage);
             
 
             Console.WriteLine("Izadji sa ENTER");

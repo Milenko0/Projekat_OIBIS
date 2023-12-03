@@ -19,9 +19,9 @@ namespace Common
             {
                 Key = ASCIIEncoding.ASCII.GetBytes(secretKey),
                 Mode = CipherMode.ECB,
-                Padding = PaddingMode.None
+                Padding = PaddingMode.Zeros
             };
-            Console.WriteLine(messageByte.Length);
+            
             ICryptoTransform tripleDesEncryptTransform = tripleDesCryptoProvider.CreateEncryptor();
             using (MemoryStream memoryStream = new MemoryStream())
             {
@@ -29,8 +29,8 @@ namespace Common
                 {
                     
                     cryptoStream.Write(messageByte, 0, messageByte.Length);
-                    //cryptoStream.FlushFinalBlock();
-                    encryptedMessage = memoryStream.ToArray().ToString();                              //encrypted image body
+                    cryptoStream.FlushFinalBlock();
+                    encryptedMessage = ASCIIEncoding.ASCII.GetString(memoryStream.ToArray());                         //encrypted image body
                 }
             }
             return encryptedMessage;
@@ -38,7 +38,7 @@ namespace Common
 
         public static string DecryptMessage(string encryptedMessage, string secretKey)
         {
-            string decryptedMessage = string.Empty;
+            string decryptedMessage = null;
             byte[] encryptedMessageByte = ASCIIEncoding.ASCII.GetBytes(encryptedMessage);
             byte[] decryptedMessageByte = null;
 
@@ -46,20 +46,23 @@ namespace Common
             {
                 Key = ASCIIEncoding.ASCII.GetBytes(secretKey),
                 Mode = CipherMode.ECB,
-                Padding = PaddingMode.None
+                Padding = PaddingMode.Zeros
             };
 
             ICryptoTransform tripleDesDecryptTransform = tripleDesCryptoProvider.CreateDecryptor();
             using (MemoryStream memoryStream = new MemoryStream(encryptedMessageByte))
             {
-                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, tripleDesDecryptTransform, CryptoStreamMode.Read))
+                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, tripleDesDecryptTransform, CryptoStreamMode.Write))
                 {
-                    decryptedMessageByte = new byte[encryptedMessage.Length];       //decrypted image body - the same lenght as encrypted part
-                    cryptoStream.Read(decryptedMessageByte, 0, decryptedMessageByte.Length);
+                    decryptedMessageByte = new byte[encryptedMessageByte.Length]; //decrypted image body - the same lenght as encrypted part
+                    
+                    cryptoStream.Write(encryptedMessageByte, 0, encryptedMessageByte.Length);
+                    cryptoStream.FlushFinalBlock();
+                    decryptedMessage = ASCIIEncoding.ASCII.GetString(memoryStream.ToArray());
                 }
             }
 
-            decryptedMessage = decryptedMessageByte.ToString();
+            
 
             return decryptedMessage;
         }
