@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projekat_12",
+    "\\Projekat_12\\Common"
   ],
+  "SelectedNode": "\\Projekat_12\\Common\\Encrypting.cs",
   "PreviewInSolutionExplorer": false
 }

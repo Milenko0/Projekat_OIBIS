@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,15 +44,12 @@ namespace Client
 
         private string Modify(string key)
         {
-            string returnString = "";
-            foreach(char l in key)
-            {
-                char z = (char)(l + 'z');
-                //Console.WriteLine(z);
-                returnString += z;
-            }
-            //Console.WriteLine(returnString);
-            return returnString;
+            UnicodeEncoding encoding = new UnicodeEncoding();
+            byte[] data = encoding.GetBytes(key);
+            byte[] hash = null;
+            SHA256Managed sha256 = new SHA256Managed();
+            hash = sha256.ComputeHash(data);
+            return Convert.ToBase64String(hash);
         }
 
         public void Dispose()
