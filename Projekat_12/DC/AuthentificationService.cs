@@ -22,11 +22,13 @@ namespace DC
             RegisteredUsers.Add("DESKTOP-VU574HQ\\Milenko", password);
             RegisteredUsers.Add("BUBALO-LAPTOP\\Bubalo", password);
             RegisteredUsers.Add("NOBLICABOOK\\nikol", password);
+            RegisteredUsers.Add("DESKTOP-VGLB1AL\\Djuradj", password);
 
             UsersAccountForServer = new Dictionary<string, string>();
             UsersAccountForServer.Add("DESKTOP-VU574HQ\\Milenko", password);
             UsersAccountForServer.Add("BUBALO-LAPTOP\\Bubalo", password);
             UsersAccountForServer.Add("NOBLICABOOK\\nikol", password);
+            UsersAccountForServer.Add("DESKTOP-VGLB1AL\\Djuradj", password);
 
         }
 

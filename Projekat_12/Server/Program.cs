@@ -53,7 +53,7 @@ namespace Server
             var enMessage = Encrypting.EncryptMessage("HELLO WORLD", secretKey);
             var deMEssage = Encrypting.DecryptMessage(enMessage, secretKey);
 
-            Console.WriteLine(deMEssage + " " + enMessage);
+            Console.WriteLine("TEST: " + deMEssage + " " + enMessage);
             
 
             Console.WriteLine("Izadji sa ENTER");

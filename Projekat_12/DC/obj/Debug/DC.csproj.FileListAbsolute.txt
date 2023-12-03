@@ -49,3 +49,13 @@ C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.cs
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CopyComplete
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.exe
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe.config
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\bin\Debug\Common.dll
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\bin\Debug\Common.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.AssemblyReference.cache
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CopyComplete
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.exe
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.pdb

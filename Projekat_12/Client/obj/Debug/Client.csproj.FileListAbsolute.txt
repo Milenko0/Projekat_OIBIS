@@ -67,3 +67,16 @@ C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Client\obj\Debug\C
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.exe
 C:\Users\Bubalo\Desktop\bezbednost\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\Client.exe.config
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\Client.exe
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\Client.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\Common.dll
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\DC.exe
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\Common.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\DC.pdb
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\bin\Debug\DC.exe.config
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.exe
+C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Client\obj\Debug\Client.pdb
