@@ -34,3 +34,9 @@ C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Common\obj\Deb
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.dll
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.pdb
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\bin\Debug\Common.dll
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\bin\Debug\Common.pdb
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.dll
+C:\Users\Bubalo\Desktop\bez\Projekat_OIBIS\Projekat_12\Common\obj\Debug\Common.pdb

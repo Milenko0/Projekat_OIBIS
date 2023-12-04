@@ -45,61 +45,70 @@ namespace Client
 
                     using (WCFClient proxy = new WCFClient(binding, new EndpointAddress(new Uri(serviceEndpointAndKey.Item1))))
                     {
-                        char izbor;
-                        string message = "";
-                        bool close = false;
-                        while (!close)
+                        //secretKey = "1111111";
+                        if (proxy.Connect(secretKey))
                         {
-                            message = "";
-                            Console.WriteLine();
-                            Console.WriteLine("------OPCIJE------");
-                            Console.WriteLine("1) Write");
-                            Console.WriteLine("2) Read");
-                            Console.WriteLine("3) Zatvaranje komunikacije");
-                            Console.WriteLine("Unesite:");
-                            izbor = Console.ReadKey().KeyChar;
-                            Console.WriteLine();
-                            switch (izbor)
+                            char izbor;
+                            string message = "";
+                            bool close = false;
+                            while (!close)
                             {
-                                case '1':
-                                    Console.WriteLine();
-                                    //secretKey = "1111111";
-                                    Console.WriteLine("Unesite poruku za server:");
-                                    string text = Console.ReadLine();
-                                    Tuple<bool, string> answerW = proxy.Write(secretKey,text);
-                                    if (answerW.Item1)
-                                    {
-                         
-                                        Console.WriteLine("Odgovor servera: "+ answerW.Item2);
-                                    }
-                                    break;
-                                case '2':
-                                    Console.WriteLine();
-                                    Tuple<bool,List<string> > answerR = proxy.Read(secretKey);
-                                    if (answerR.Item1)
-                                    {
-                                        foreach(string s in answerR.Item2)
+                                message = "";
+                                Console.WriteLine();
+                                Console.WriteLine("------OPCIJE------");
+                                Console.WriteLine("1) Write");
+                                Console.WriteLine("2) Read");
+                                Console.WriteLine("3) Zatvaranje komunikacije");
+                                Console.WriteLine("Unesite:");
+                                izbor = Console.ReadKey().KeyChar;
+                                Console.WriteLine();
+                                switch (izbor)
+                                {
+                                    case '1':
+                                        Console.WriteLine();
+                                        //secretKey = "1111111";
+                                        Console.WriteLine("Unesite poruku za server:");
+                                        string text = Console.ReadLine();
+                                        Tuple<bool, string> answerW = proxy.Write(secretKey, text);
+                                        if (answerW.Item1)
                                         {
-                                            Console.WriteLine(s);
+
+                                            Console.WriteLine("Odgovor servera: " + answerW.Item2);
                                         }
-                                    }
-                                    break;
-                                case '3':
-                                    close = true;
-                                 
-                                    break;
-                                default:
-                                    Console.WriteLine("Pogresan unos");
-                                    break;
+                                        break;
+                                    case '2':
+                                        Console.WriteLine();
+                                        Tuple<bool, List<string>> answerR = proxy.Read(secretKey);
+                                        if (answerR.Item1)
+                                        {
+                                            foreach (string s in answerR.Item2)
+                                            {
+                                                Console.WriteLine(s);
+                                            }
+                                        }
+                                        break;
+                                    case '3':
+                                        close = true;
+
+                                        break;
+                                    default:
+                                        Console.WriteLine("Pogresan unos");
+                                        break;
+                                }
                             }
                         }
+                        else { Console.WriteLine("Autentifikacija sa servisom je neuspesna");
+                            
+                        }
                     }
+                        
                 }
                 else
                 {
                     Console.WriteLine("Kredencijali nisu vazeci.");
                 }
             }
+            Console.ReadKey();
         }
     }
 }

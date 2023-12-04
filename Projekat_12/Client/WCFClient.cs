@@ -60,15 +60,23 @@ namespace Client
                 return Tuple.Create(false, new List<string>() { e.Message});
             }
         }
-
-        private string Modify(string key)
+        
+        public bool Connect(string secretKey)
         {
-            UnicodeEncoding encoding = new UnicodeEncoding();
-            byte[] data = encoding.GetBytes(key);
-            byte[] hash = null;
-            SHA256Managed sha256 = new SHA256Managed();
-            hash = sha256.ComputeHash(data);
-            return Convert.ToBase64String(hash);
+            string secretKeyHashed = Encrypting.Hash256(secretKey, "sfafsd");
+            
+            Tuple<string,string> res = factory.Connection(secretKeyHashed, "sfafsd");
+            if (res == null)
+            {
+                return false;
+            }
+            if (Encrypting.Hash256(secretKey, res.Item2) == res.Item1)
+            {
+                return true;
+            }
+            else
+                return false;
+            
         }
 
         public void Dispose()

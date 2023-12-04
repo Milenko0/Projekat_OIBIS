@@ -10,6 +10,17 @@ namespace Server
 {
     public class DataManagmentServer : IDataManagment
     {
+       public Tuple<string, string> Connection(string keyHashed, string salt)
+        {
+            if (Encrypting.Hash256(Program.secretKey, salt).Equals(keyHashed))
+            {
+                //Console.WriteLine(Program.secretKey);
+                return new Tuple<string, string>(Encrypting.Hash256(Program.secretKey, "serversalt"), "serversalt");
+            }
+            else
+                //Console.WriteLine("dfsaf");
+                return null;
+        }
         public List<string> Read()
         {
             var ret = SQliteDataAccess.ReadMessages();
@@ -43,15 +54,7 @@ namespace Server
                 return e.Message;
             }
         }
-        private string Modify(string key)
-        {
-            UnicodeEncoding encoding = new UnicodeEncoding();
-            byte[] data = encoding.GetBytes(key);
-            byte[] hash = null;
-            SHA256Managed sha256 = new SHA256Managed();
-            hash = sha256.ComputeHash(data);
-            return Convert.ToBase64String(hash);
-        }
+        
         
     }
 }

@@ -10,6 +10,16 @@ namespace Common
 {
     public class Encrypting
     {
+        public static string Hash256(string key, string salt)
+        {
+            UnicodeEncoding encoding = new UnicodeEncoding();
+            byte[] data = encoding.GetBytes(key+salt);
+            byte[] hash = null;
+            SHA256Managed sha256 = new SHA256Managed();
+            hash = sha256.ComputeHash(data);
+            return Convert.ToBase64String(hash);
+            //return hash.ToString();
+        }
         public static string EncryptMessage(string message, string secretKey)
         {
             while (message.Length % 8 != 0) // dopunjavamo praznim mestaima, koje uklanjamo pri dekripciji, da bismo dosli do duzine deljive sa 8, jer bi se ostatak karaktera odbacio (blokoci su kod 3DS duzine 64bit-a)

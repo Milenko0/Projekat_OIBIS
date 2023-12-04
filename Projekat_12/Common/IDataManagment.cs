@@ -15,5 +15,8 @@ namespace Common
         List<string> Read();
         [OperationContract]
         string Write(string text);
+        [OperationContract]
+        Tuple<string,string> Connection(string keyHashed, string salt);
+
     }
 }
