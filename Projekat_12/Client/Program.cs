@@ -64,7 +64,9 @@ namespace Client
                                 case '1':
                                     Console.WriteLine();
                                     //secretKey = "1111111";
-                                    Tuple<bool, string> answerW = proxy.Write(secretKey);
+                                    Console.WriteLine("Unesite poruku za server:");
+                                    string text = Console.ReadLine();
+                                    Tuple<bool, string> answerW = proxy.Write(secretKey,text);
                                     if (answerW.Item1)
                                     {
                          
@@ -73,6 +75,14 @@ namespace Client
                                     break;
                                 case '2':
                                     Console.WriteLine();
+                                    Tuple<bool,List<string> > answerR = proxy.Read(secretKey);
+                                    if (answerR.Item1)
+                                    {
+                                        foreach(string s in answerR.Item2)
+                                        {
+                                            Console.WriteLine(s);
+                                        }
+                                    }
                                     break;
                                 case '3':
                                     close = true;

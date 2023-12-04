@@ -62,3 +62,8 @@ C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Server\obj\Deb
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.exe
 C:\Users\Djuradj\Source\Repos\Milenko0\Projekat_OIBIS\Projekat_12\Server\obj\Debug\Server.pdb
+C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Database\ServiceDB.db
+C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Dapper.dll
+C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\bin\Debug\System.Data.SQLite.dll
+C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\bin\Debug\Dapper.xml
+C:\Users\nikol\Desktop\Projekat_OIBIS\Projekat_12\Server\bin\Debug\System.Data.SQLite.xml

@@ -12,8 +12,8 @@ namespace Common
     public interface IDataManagment
     {
         [OperationContract]
-        void Read();
+        List<string> Read();
         [OperationContract]
-        string Write(string modifiedKey);
+        string Write(string text);
     }
 }

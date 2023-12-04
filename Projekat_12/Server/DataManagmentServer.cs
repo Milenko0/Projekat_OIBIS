@@ -10,12 +10,19 @@ namespace Server
 {
     public class DataManagmentServer : IDataManagment
     {
-        public void Read()
+        public List<string> Read()
         {
-
+            var ret = SQliteDataAccess.ReadMessages();
+            List<string> retCipher = new List<string>();
+            foreach(string s in ret)
+            {
+                retCipher.Add(Encrypting.EncryptMessage(s, Program.secretKey));
+            }
+            return retCipher;
         }
-        public string Write(string modifiedKey) 
+        public string Write(string ciptherText) 
         {
+            /*
             string key = Modify(Program.secretKey);
             if(modifiedKey == key)
             {
@@ -24,6 +31,16 @@ namespace Server
             else
             {
                 return "Kominikacija nije uspesna";
+            }*/
+            try
+            {
+                
+                string text = Encrypting.DecryptMessage(ciptherText, Program.secretKey);
+                SQliteDataAccess.WriteMessage(text);
+                return "Uspesno upisana poruka";
+            }catch(Exception e)
+            {
+                return e.Message;
             }
         }
         private string Modify(string key)

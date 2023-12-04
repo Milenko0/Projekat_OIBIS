@@ -27,18 +27,37 @@ namespace Client
             }
         }
 
-        public Tuple<bool, string> Write(string key)
+        public Tuple<bool, string> Write(string key, string text)
         {
             try
             {
-                string modifiedKey = Modify(key);
-                string answer = factory.Write(modifiedKey);
+                string encryptedMessage = Encrypting.EncryptMessage(text, key);
+                string answer = factory.Write(encryptedMessage);
                 return Tuple.Create(true, answer);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return Tuple.Create(false, e.Message);
+            }
+        }
+        public Tuple<bool, List<string>> Read(string secretKey)
+        {
+            try
+            {
+                
+                List<string> answerCrypted = factory.Read();
+                List<string> answer = new List<string>();
+                foreach(string s in answerCrypted)
+                {
+                    answer.Add(Encrypting.DecryptMessage(s, secretKey));
+                }
+                return Tuple.Create(true, answer);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return Tuple.Create(false, new List<string>() { e.Message});
             }
         }
 
