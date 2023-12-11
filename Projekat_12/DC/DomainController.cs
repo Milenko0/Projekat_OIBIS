@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,38 @@ namespace DC
 
 			if (AS == null)
 			{
-				
+				using (EventLog log = new EventLog("Application"))
+				{
+					log.Source = "Domain Controller";
+					log.WriteEntry($"Authentification Service failed to open.", EventLogEntryType.FailureAudit);
+				}
 				throw new ArgumentNullException("AS was null");
+            }
+            else
+            {
+				using (EventLog log = new EventLog("Application"))
+				{
+					log.Source = "Domain Controller";
+					log.WriteEntry($"Authentification Service opened successfully.", EventLogEntryType.SuccessAudit);
+				}
 			}
 			
 			if (TGS == null)
 			{
-				
+				using (EventLog log = new EventLog("Application"))
+				{
+					log.Source = "Domain Controller";
+					log.WriteEntry($"Ticket Granting Service failed to open.", EventLogEntryType.FailureAudit);
+				}
 				throw new ArgumentNullException("TGS was null");
+            }
+            else
+            {
+				using (EventLog log = new EventLog("Application"))
+				{
+					log.Source = "Domain Controller";
+					log.WriteEntry($"Ticket Granting Service opened successfully.", EventLogEntryType.SuccessAudit);
+				}
 			}
 		
 		}
@@ -37,6 +62,11 @@ namespace DC
 
 		public Tuple<string, string> ServiceRequest(string service, string username)
 		{
+			using (EventLog log = new EventLog("Application"))
+			{
+				log.Source = "Domain Controller";
+				log.WriteEntry($"Recieved request for service information and secret key.", EventLogEntryType.Information);
+			}
 			return TGS.GetServiceEndpointAndSecretKey(service);
 		}
 

@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using System.ServiceModel;
@@ -45,7 +46,7 @@ namespace Client
 
                     using (WCFClient proxy = new WCFClient(binding, new EndpointAddress(new Uri(serviceEndpointAndKey.Item1))))
                     {
-                        //secretKey = "1111111";
+                        secretKey = "1111111";
                         if (proxy.Connect(secretKey))
                         {
                             char izbor;
@@ -88,6 +89,11 @@ namespace Client
                                         }
                                         break;
                                     case '3':
+                                        using (EventLog log = new EventLog("Application"))
+                                        {
+                                            log.Source = "Client";
+                                            log.WriteEntry($"Client Shut Down", EventLogEntryType.Information);
+                                        }
                                         close = true;
 
                                         break;

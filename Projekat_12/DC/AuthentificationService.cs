@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,18 +37,30 @@ namespace DC
         {
             if (!RegisteredUsers.ContainsKey(username))
             {
-                Console.WriteLine("fsa");
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Client {username} does not exist", EventLogEntryType.Information);
+                }
                 throw new Exception("Korisnik ne postoji.");
             }
 
             if (RegisteredUsers[username] == password)
             {
-
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Client {username} successfuly authentificated", EventLogEntryType.SuccessAudit);
+                }
                 return true;
             }
             else
             {
-
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Client {username} authentification failed with wrong password.", EventLogEntryType.FailureAudit);
+                }
                 return false;
             }
         }
@@ -57,19 +70,31 @@ namespace DC
          {
              if (!UsersAccountForServer.ContainsKey(username))
              {
-
-                 throw new Exception("No shuch user.");
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Service {username} doesn't exist.", EventLogEntryType.Information);
+                }
+                throw new Exception("Servis ne postoji.");
              }
 
              if (UsersAccountForServer[username] == hashPassword)  ///	Ispravan password ==> true
              {
-
-                 return true;
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Service {username} successfuly authentificated", EventLogEntryType.SuccessAudit);
+                }
+                return true;
              }
              else    /// Neispravan password ==> false
              {
-
-                 return false;
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Domain Controller";
+                    log.WriteEntry($"Service {username} authentification failed with wrong password.", EventLogEntryType.FailureAudit);
+                }
+                return false;
              }
          }
 

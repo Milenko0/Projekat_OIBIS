@@ -24,10 +24,19 @@ namespace Server
             try
             {
                 factory.RegisterService(IPAddr, hostName, port, hashPassword, username);
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Servis";
+                    log.WriteEntry($"Service {hostName} registered successfully.", EventLogEntryType.SuccessAudit);
+                }
             }
             catch (Exception e)
             {
-
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Servis";
+                    log.WriteEntry($"Service {hostName} failed to register.", EventLogEntryType.FailureAudit);
+                }
                 Console.WriteLine(e.Message);
             }
         }
@@ -37,10 +46,20 @@ namespace Server
             try
             {
                 factory.SignOutService(hostName);
-                
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Servis";
+                    log.WriteEntry($"Service {hostName} signed out successfully.", EventLogEntryType.Information);
+                }
+
             }
             catch (Exception e)
             {
+                using (EventLog log = new EventLog("Application"))
+                {
+                    log.Source = "Servis";
+                    log.WriteEntry($"Service {hostName} failed to sign out.", EventLogEntryType.FailureAudit);
+                }
                 Console.WriteLine(e.Message);
             }
         }
