@@ -89,11 +89,13 @@ namespace Client
                                         }
                                         break;
                                     case '3':
+                                        /*
                                         using (EventLog log = new EventLog("Application"))
                                         {
                                             log.Source = "Client";
                                             log.WriteEntry($"Client Shut Down", EventLogEntryType.Information);
                                         }
+                                        */
                                         close = true;
 
                                         break;

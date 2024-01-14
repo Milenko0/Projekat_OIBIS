@@ -63,5 +63,15 @@ namespace Server
                 Console.WriteLine(e.Message);
             }
         }
+
+        public void Dispose()
+        {
+            if (factory != null)
+            {
+                factory = null;
+            }
+
+            this.Close();
+        }
     }
 }
