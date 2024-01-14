@@ -19,7 +19,7 @@ namespace DC
             host.AddServiceEndpoint(typeof(ICConnection), binding, address);
 
             host.Open();
-            Console.WriteLine("Domain controller host is opened.");
+            Console.WriteLine("DC je pokrenut.");
 
 
             string addressForServer = "net.tcp://localhost:6001/ServiceRegistration";
@@ -31,7 +31,7 @@ namespace DC
             hostForServer.Open();
             
 
-            Console.WriteLine("ServiceConnection host is opened.");
+            Console.WriteLine("ServiceConnection host je pokrenut.");
             Console.ReadLine();
 
             host.Close();

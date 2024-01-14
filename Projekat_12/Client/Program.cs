@@ -46,7 +46,7 @@ namespace Client
 
                     using (WCFClient proxy = new WCFClient(binding, new EndpointAddress(new Uri(serviceEndpointAndKey.Item1))))
                     {
-                        secretKey = "1111111";
+                        //secretKey = "1111111";
                         if (proxy.Connect(secretKey))
                         {
                             char izbor;
@@ -57,8 +57,8 @@ namespace Client
                                 message = "";
                                 Console.WriteLine();
                                 Console.WriteLine("------OPCIJE------");
-                                Console.WriteLine("1) Write");
-                                Console.WriteLine("2) Read");
+                                Console.WriteLine("1) Upis");
+                                Console.WriteLine("2) Citanje");
                                 Console.WriteLine("3) Zatvaranje komunikacije");
                                 Console.WriteLine("Unesite:");
                                 izbor = Console.ReadKey().KeyChar;

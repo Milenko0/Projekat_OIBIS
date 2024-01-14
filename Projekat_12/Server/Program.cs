@@ -68,14 +68,14 @@ namespace Server
                 log.Source = "Servis";
                 log.WriteEntry($"Client connected to service. Secret key for communication recieved.", EventLogEntryType.Information);
             }
-
+            /*
             Console.WriteLine("Privatni kljuc" + secretKey);
 
             var enMessage = Encrypting.EncryptMessage("HELLO WORLD", secretKey);
             var deMEssage = Encrypting.DecryptMessage(enMessage, secretKey);
-
-            Console.WriteLine("TEST: " + deMEssage + " " + enMessage);
             
+            Console.WriteLine("TEST: " + deMEssage + " " + enMessage);
+            */
 
             Console.WriteLine("Izadji sa ENTER");
             Console.ReadKey();

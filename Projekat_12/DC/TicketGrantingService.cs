@@ -81,7 +81,7 @@ namespace DC
         public void SignOutService(string hostName)
         {
             activeServices.Remove(hostName);
-            Console.WriteLine("Servis {0} is deactivated.", hostName);
+            Console.WriteLine("Servis {0} je deaktiviran.", hostName);
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Domain Controller";
@@ -94,7 +94,7 @@ namespace DC
         {
             if (activeServices.ContainsKey(hostName))
             {
-                Console.WriteLine($"Service {hostName} already exists.");
+                Console.WriteLine($"Servis {hostName} je vec aktivan.");
 
                 using (EventLog log = new EventLog("Application"))
                 {
@@ -108,7 +108,7 @@ namespace DC
             EndpointAddress endpointAdress = new EndpointAddress(new Uri("net.tcp://localhost:" + port + "/" + hostName), EndpointIdentity.CreateUpnIdentity("admin@w7ent"));
             activeServices.Add(hostName, new ServiceModel(IPAddr, hostName, port, hashPassword, endpointAdress.Identity));
             dnsTable.Add(IPAddr, hostName);
-            Console.WriteLine("Servis {0} is activated.", hostName);
+            Console.WriteLine("Servis {0} je aktiviran.", hostName);
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Domain Controller";
