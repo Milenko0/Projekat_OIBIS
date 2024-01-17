@@ -21,9 +21,9 @@ namespace DC
 
             RegisteredUsers = new Dictionary<string, string>();
             RegisteredUsers.Add("DESKTOP-VU574HQ\\Milenko", password);
-            RegisteredUsers.Add("DESKTOP-VU574HQ\\Petar", password);
+            RegisteredUsers.Add("DESKTOP-VU574HQ\\pera", password);
             RegisteredUsers.Add("BUBALO-LAPTOP\\Bubalo", password);
-            RegisteredUsers.Add("BUBALO-LAPTOP\\Petar", password);
+            RegisteredUsers.Add("BUBALO-LAPTOP\\pera", password);
             RegisteredUsers.Add("NOBLICABOOK\\nikol", password);
             RegisteredUsers.Add("DESKTOP-VGLB1AL\\Djuradj", password);
             RegisteredUsers.Add("NOBLICABOOK\\wcfclient", password);
@@ -32,7 +32,7 @@ namespace DC
             UsersAccountForServer.Add("DESKTOP-VU574HQ\\Milenko", password);
             UsersAccountForServer.Add("DESKTOP-VU574HQ\\zika", password);
             UsersAccountForServer.Add("BUBALO-LAPTOP\\Bubalo", password);
-            UsersAccountForServer.Add("BUBALO-LAPTOP\\Zika", password);
+            UsersAccountForServer.Add("BUBALO-LAPTOP\\zika", password);
             UsersAccountForServer.Add("NOBLICABOOK\\nikol", password);
             UsersAccountForServer.Add("NOBLICABOOK\\wcfservice", password);
             UsersAccountForServer.Add("DESKTOP-VGLB1AL\\Djuradj", password);
