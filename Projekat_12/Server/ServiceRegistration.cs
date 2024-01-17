@@ -24,19 +24,23 @@ namespace Server
             try
             {
                 factory.RegisterService(IPAddr, hostName, port, hashPassword, username);
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Service {hostName} registered successfully.", EventLogEntryType.SuccessAudit);
                 }
+                */
             }
             catch (Exception e)
             {
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Service {hostName} failed to register.", EventLogEntryType.FailureAudit);
                 }
+                */
                 Console.WriteLine(e.Message);
             }
         }

@@ -32,21 +32,25 @@ namespace Server
                 {
                     retCipher.Add(Encrypting.EncryptMessage(s, Program.secretKey));
                 }
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Successfully fetched data from the database.", EventLogEntryType.SuccessAudit);
                 }
+                */
                 return retCipher;
 
             }
             else
             {
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Did not fatch any data from the database.", EventLogEntryType.Error);
                 }
+                */
                 return null;
             }
         }
@@ -67,19 +71,23 @@ namespace Server
                 
                 string text = Encrypting.DecryptMessage(ciptherText, Program.secretKey);
                 SQliteDataAccess.WriteMessage(text);
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Successfully inserted data into the database.", EventLogEntryType.SuccessAudit);
                 }
+                */
                 return "Uspesno upisana poruka";
             }catch(Exception e)
             {
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Did not write any data into the database.", EventLogEntryType.Error);
                 }
+                */
                 return e.Message;
             }
         }

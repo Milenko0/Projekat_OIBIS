@@ -79,3 +79,14 @@ C:\Users\Djuradj\Desktop\OIBS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.
 C:\Users\Djuradj\Desktop\OIBS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CopyComplete
 C:\Users\Djuradj\Desktop\OIBS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.exe
 C:\Users\Djuradj\Desktop\OIBS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.pdb
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe.config
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.exe
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\bin\Debug\DC.pdb
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\bin\Debug\Common.dll
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\bin\Debug\Common.pdb
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.AssemblyReference.cache
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.SuggestedBindingRedirects.cache
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.csproj.CopyComplete
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.exe
+C:\Users\nikol\Desktop\IUIS\Projekat_OIBIS\Projekat_12\DC\obj\Debug\DC.pdb

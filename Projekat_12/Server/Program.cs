@@ -35,20 +35,24 @@ namespace Server
 
 
             clientHost.Open();
+            /*
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Servis";
                 log.WriteEntry($"Service {clientService} opened successfully.", EventLogEntryType.SuccessAudit);
             }
+            */
             Console.WriteLine("Servis je pokrenut.");
 
             using (ServiceRegistration proxy = new ServiceRegistration(binding, new EndpointAddress(new Uri("net.tcp://localhost:6001/ServiceRegistration"))))
             {
+                /*
                 using (EventLog log = new EventLog("Application"))
                 {
                     log.Source = "Servis";
                     log.WriteEntry($"Service atempting to register.", EventLogEntryType.Information);
                 }
+                */
                 proxy.Register(serviceIP + clientPort, clientService, clientPort, "password", id.Name);
             }
 
@@ -56,19 +60,21 @@ namespace Server
             connectionHost.AddServiceEndpoint(typeof(IKeySender), binding, keyRecieverEndpoint);
             connectionHost.Open();
             Console.WriteLine("Servis za primanje kljuca je pokrenut.");
+            /*
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Servis";
                 log.WriteEntry($"Connection service opened successfully.", EventLogEntryType.SuccessAudit);
             }
-
+            */
             while (secretKey == null) System.Threading.Thread.Sleep(50);
+            /*
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Servis";
                 log.WriteEntry($"Client connected to service. Secret key for communication recieved.", EventLogEntryType.Information);
             }
-            /*
+           
             Console.WriteLine("Privatni kljuc" + secretKey);
 
             var enMessage = Encrypting.EncryptMessage("HELLO WORLD", secretKey);
@@ -86,17 +92,21 @@ namespace Server
             }
 
             clientHost.Close();
+            /*
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Servis";
                 log.WriteEntry($"Service '{clientService}' closed successfully.", EventLogEntryType.Information, 210, 4);
             }
+            */
             connectionHost.Close();
+            /*
             using (EventLog log = new EventLog("Application"))
             {
                 log.Source = "Servis";
                 log.WriteEntry($"Connection service closed successfully.", EventLogEntryType.Information, 210, 4);
             }
+            */
         }
     }
 }

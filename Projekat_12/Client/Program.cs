@@ -106,7 +106,7 @@ namespace Client
                             }
                         }
                         else { Console.WriteLine("Autentifikacija sa servisom je neuspesna");
-                            
+                            Console.ReadKey();
                         }
                     }
                         
@@ -114,6 +114,7 @@ namespace Client
                 else
                 {
                     Console.WriteLine("Kredencijali nisu vazeci.");
+                    Console.ReadKey();
                 }
             }
             Console.ReadKey();
